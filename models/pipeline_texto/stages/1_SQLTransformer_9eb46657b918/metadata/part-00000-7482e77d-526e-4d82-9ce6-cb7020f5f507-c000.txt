@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.SQLTransformer","timestamp":1783830808636,"sparkVersion":"4.1.2","uid":"SQLTransformer_9eb46657b918","paramMap":{"statement":"\n    SELECT *, filter(palabras_crudas, x -> NOT x rlike '^[0-9]+$') AS palabras\n    FROM __THIS__\n"},"defaultParamMap":{}}

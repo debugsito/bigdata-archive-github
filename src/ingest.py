@@ -1,9 +1,9 @@
 """
-Script de ingesta - Fase 2 (12 horas) + Fase 7 (expansion a ~125 horas)
+Script de ingesta - Paso 2 (12 horas) + Paso 7 (expansion a ~125 horas)
 
 Descarga horas puntuales de GH Archive (https://data.gharchive.org/).
-En Fase 1-2 bajamos 12 horas (una por mes) para probar el pipeline. En
-Fase 7 el profe... digo, el usuario pidio mucha mas data para un trabajo
+En Paso 1-2 bajamos 12 horas (una por mes) para probar el pipeline. En
+Paso 7 el profe... digo, el usuario pidio mucha mas data para un trabajo
 mas solido, asi que expandimos a ~125 horas: las 12 originales + 57 horas
 dispersas nuevas (5 por mes) + un bloque de 4 dias seguidos (para tener
 por fin algo parecido a una serie de tiempo real por repo, no solo una
@@ -25,7 +25,7 @@ import urllib.request
 # Carpeta donde se guardan los archivos crudos descargados
 CARPETA_RAW = "data/raw"
 
-# Las 12 horas originales de Fase 1-2, una por mes (ver PROGRESO.md)
+# Las 12 horas originales de Paso 1-2, una por mes (ver PROGRESO.md)
 HORAS_ORIGINALES = [
     "2025-08-12-14",
     "2025-09-23-18",
@@ -41,7 +41,7 @@ HORAS_ORIGINALES = [
     "2026-07-08-15",
 ]
 
-# --- Fase 7: expansion ---
+# --- Paso 7: expansion ---
 # 5 horas nuevas por mes, en dias y horas distintas a la original de ese
 # mes (para tener mas variedad dentro de cada mes), siempre entre 10 y 23
 # por el hallazgo de arriba.
@@ -112,10 +112,10 @@ def contar_eventos(ruta_archivo):
     un evento en JSON) y cuenta cuantos eventos hay de cada tipo de interes.
     Tambien cuenta cuantas lineas totales y cuantas vinieron de bots.
 
-    Esto lo usamos en Fase 1-2 para validar que el formato funcionaba con
-    pocas horas. Con las ~125 horas de la Fase 7 ya no lo llamamos para
+    Esto lo usamos en Paso 1-2 para validar que el formato funcionaba con
+    pocas horas. Con las ~125 horas del Paso 7 ya no lo llamamos para
     cada hora (seria lento hacerlo en Python puro para tanto archivo) --
-    el conteo "de verdad", con la limpieza completa, se hace en la Fase 3
+    el conteo "de verdad", con la limpieza completa, se hace en el Paso 3
     con Spark, que es mucho mas rapido para esto. Dejamos la funcion aca
     por si se quiere revisar una hora suelta a mano."""
 
